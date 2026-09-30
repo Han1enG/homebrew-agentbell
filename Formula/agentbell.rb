@@ -1,23 +1,17 @@
 class Agentbell < Formula
   desc "Local macOS notifications for Claude Code and Codex CLI"
   homepage "https://github.com/Han1enG/agent-bell"
-  url "https://github.com/Han1enG/agent-bell/archive/refs/tags/v0.1.0.tar.gz"
-  version "0.1.0"
+  url "https://github.com/Han1enG/agent-bell/releases/download/v0.1.1/AgentBell-v0.1.1-macOS.zip"
+  sha256 "6ea457c42913af4cd8fd1b1b62fd2e3bc7bfabd51713543973fbd672e02c56c7"
+  version "0.1.1"
   license "MIT"
 
   depends_on :macos
-  depends_on "go" => :build
+  depends_on arch: :arm64
 
   def install
-    system "go", "build", "-trimpath", "-ldflags", "-s -w -X main.version=0.1.0", "-o", "agentbell", "."
-    bin.install "agentbell"
-
-    app = libexec/"AgentBell.app/Contents"
-    (app/"MacOS").mkpath
-    (app/"Resources").mkpath
-    system "clang", "-framework", "Cocoa", "native/AgentBellNotifier.m", "-o", app/"MacOS/AgentBellNotifier"
-    cp "native/Info.plist", app/"Info.plist"
-    cp "assets/agentbell-icon.png", app/"Resources/AgentBell.png"
+    libexec.install "AgentBell.app"
+    bin.install libexec/"AgentBell.app/Contents/MacOS/agentbell"
   end
 
   test do
