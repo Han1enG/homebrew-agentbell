@@ -11,8 +11,13 @@ class Agentbell < Formula
 
   def install
     app = Pathname.pwd/"AgentBell.app"
-    libexec.install app
-    bin.install libexec/"AgentBell.app/Contents/MacOS/agentbell"
+    app_contents = libexec/"AgentBell.app/Contents"
+    (app_contents/"MacOS").mkpath
+    (app_contents/"Resources").mkpath
+    cp app/"Contents/MacOS/AgentBellNotifier", app_contents/"MacOS/AgentBellNotifier"
+    cp app/"Contents/Info.plist", app_contents/"Info.plist"
+    cp app/"Contents/Resources/AgentBell.png", app_contents/"Resources/AgentBell.png"
+    bin.install app/"Contents/MacOS/agentbell"
   end
 
   test do
