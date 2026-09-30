@@ -10,8 +10,7 @@ class Agentbell < Formula
   depends_on arch: :arm64
 
   def install
-    app = buildpath/"AgentBell.app"
-    odie "AgentBell.app was not found in the release archive" unless app.directory?
+    app = Pathname.pwd/"AgentBell.app"
     libexec.install app
     bin.install libexec/"AgentBell.app/Contents/MacOS/agentbell"
   end
