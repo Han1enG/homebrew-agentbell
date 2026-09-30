@@ -10,7 +10,8 @@ class Agentbell < Formula
   depends_on arch: :arm64
 
   def install
-    app = Pathname.pwd/"AgentBell.app"
+    app = Pathname.pwd
+    app = app/"AgentBell.app" if (app/"AgentBell.app").directory?
     app_contents = libexec/"AgentBell.app/Contents"
     (app_contents/"MacOS").mkpath
     (app_contents/"Resources").mkpath
