@@ -20,7 +20,7 @@ class Agentbell < Formula
     installed_app = libexec/"AgentBell.app"
     installed_app.mkpath
     # Preserve the CLI, helper, bundle metadata and resource seal together.
-    cp_r app.children, installed_app
+    cp_r app/"Contents", installed_app
     bin.install_symlink installed_app/"Contents/MacOS/agentbell"
   end
 
