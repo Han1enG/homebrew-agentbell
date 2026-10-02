@@ -2,13 +2,13 @@ class Agentbell < Formula
   desc "Local macOS notifications for Claude Code and Codex CLI"
   homepage "https://github.com/Han1enG/agent-bell"
   url on_arch_conditional(
-    arm:   "https://github.com/Han1enG/agent-bell/releases/download/v0.2.0/agentbell_0.2.0_darwin_arm64.tar.gz",
-    intel: "https://github.com/Han1enG/agent-bell/releases/download/v0.2.0/agentbell_0.2.0_darwin_amd64.tar.gz",
+    arm:   "https://github.com/Han1enG/agent-bell/releases/download/v0.2.1/agentbell_0.2.1_darwin_arm64.tar.gz",
+    intel: "https://github.com/Han1enG/agent-bell/releases/download/v0.2.1/agentbell_0.2.1_darwin_amd64.tar.gz",
   )
-  version "0.2.0"
+  version "0.2.1"
   sha256 on_arch_conditional(
-    arm:   "7e75998268b05240f7139df6331cca845954433ab66e0d22083bb7f36a5fb8a6",
-    intel: "4631782dc0dea2760d27bb59b2b85bf95f625b8fdd34e0175987303e3c00da21",
+    arm:   "2bbbb07c5fad169711fe5c3f9d679771c423d68fdbce240e603858aa09d81edd",
+    intel: "ad551c696da388fd93c2b8c5c6f2e30b7b56bfb1825d87a5085b2b745b3cf9ff",
   )
   license "MIT"
 
@@ -27,7 +27,8 @@ class Agentbell < Formula
   def caveats
     <<~EOS
       First installation: agentbell install
-      After upgrading: agentbell doctor --fix
+      After upgrading: agentbell install, then agentbell doctor --fix
+      Restart Tabby/GoLand after integration updates and use a new local terminal tab.
       macOS may ask for notification and terminal automation permissions.
     EOS
   end
