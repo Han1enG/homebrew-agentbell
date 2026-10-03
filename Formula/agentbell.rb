@@ -2,13 +2,13 @@ class Agentbell < Formula
   desc "Local macOS notifications for Claude Code and Codex CLI"
   homepage "https://github.com/Han1enG/agent-bell"
   url on_arch_conditional(
-    arm:   "https://github.com/Han1enG/agent-bell/releases/download/v0.2.1/agentbell_0.2.1_darwin_arm64.tar.gz",
-    intel: "https://github.com/Han1enG/agent-bell/releases/download/v0.2.1/agentbell_0.2.1_darwin_amd64.tar.gz",
+    arm:   "https://github.com/Han1enG/agent-bell/releases/download/v0.3.0/agentbell_0.3.0_darwin_arm64.tar.gz",
+    intel: "https://github.com/Han1enG/agent-bell/releases/download/v0.3.0/agentbell_0.3.0_darwin_amd64.tar.gz",
   )
-  version "0.2.1"
+  version "0.3.0"
   sha256 on_arch_conditional(
-    arm:   "2bbbb07c5fad169711fe5c3f9d679771c423d68fdbce240e603858aa09d81edd",
-    intel: "ad551c696da388fd93c2b8c5c6f2e30b7b56bfb1825d87a5085b2b745b3cf9ff",
+    arm:   "2adc899ce71e2bd8abb30ddc0c3acd49c930cb1c43021a6e5e24996fd7a08089",
+    intel: "8c14de6730f8e820c6b0cfe5d82981721799900f134998fd5524f55aa1e9f99d",
   )
   license "MIT"
 
